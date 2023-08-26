@@ -4,26 +4,30 @@ import "./MovieCard.css";
 
 import Star from "../../assets/star.png";
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
   return (
-    <a href="" className="movie_card">
+    <a
+      href={`https://www.themoviedb.org/movie/${movie.id}`}
+      target="_blank"
+      className="movie_card"
+    >
       <img
-        src="https://www.movieposters.com/cdn/shop/products/wandavision.mp_240x360_crop_center.progressive.jpg?v=1614371756"
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt=""
         className="movie_poster"
       />
 
       <div className="movie_details">
-        <h3 className="movie_details_heading">Movie Name</h3>
+        <h3 className="movie_details_heading">{movie.original_title}</h3>
         <div className="align_center movie_date_rate">
-          <p>10-20-2020</p>
+          <p>{movie.release_date}</p>
           <p>
-            8.0 <img src={Star} alt="rating icon" className="card_emoji" />
+            {movie.rate_average}{" "}
+            <img src={Star} alt="rating icon" className="card_emoji" />
           </p>
         </div>
         <p className="movie_description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-          pariatur magnam porro enim maiores libero.
+          {movie.overview.slice(0, 100) + "..."}
         </p>
       </div>
     </a>

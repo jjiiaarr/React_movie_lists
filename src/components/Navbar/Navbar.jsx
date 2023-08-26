@@ -18,7 +18,7 @@ const Navbar = () => {
         </a>
         <a href="">
           Upcoming
-          <img src={Party} alt="party-face emoji" className="navbar_emoji" />
+          <img src={Party} alt="party face emoji" className="navbar_emoji" />
         </a>
       </div>
     </nav>

@@ -4,6 +4,7 @@ import "./MovieList.css";
 import Fire from "../../assets/fire.png";
 import MovieCard from "./MovieCard";
 import Star from "../../assets/star.png";
+import FilterGroup from "./FilterGroup";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -42,38 +43,11 @@ const MovieList = () => {
           Popular <img src={Fire} alt="fire emoji" className="navbar_emoji" />
         </h2>
         <div className="align_center movie_list_fs">
-          <ul className="align_center movie_filter">
-            <li
-              className={
-                minRating === 8
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(8)}
-            >
-              8+ Star
-            </li>
-            <li
-              className={
-                minRating === 7
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(7)}
-            >
-              7+ Star
-            </li>
-            <li
-              className={
-                minRating === 6
-                  ? "movie_filter_item active"
-                  : "movie_filter_item"
-              }
-              onClick={() => handleFilter(6)}
-            >
-              6+ Star
-            </li>
-          </ul>
+          <FilterGroup
+            minRating={minRating}
+            onRatingClick={handleFilter}
+            ratings={[8, 7, 6]}
+          />
 
           <select name="" id="" className="movie_sorting">
             <option value="">Sort By</option>

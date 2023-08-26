@@ -1,7 +1,9 @@
 import React from "react";
 
 import "./MovieList.css";
-import Fire from "../../../assets/fire.png";
+import Fire from "../../assets/fire.png";
+import MovieCard from "./MovieCard";
+import Star from "../../assets/star.png";
 
 const MovieList = () => {
   return (
@@ -29,7 +31,22 @@ const MovieList = () => {
         </div>
       </header>
 
-      <div className="movie_cards"></div>
+      <div className="movie_cards">
+        <MovieCard />
+        <div className="movie_details">
+          <h3 className="movie_details_heading">Movie Name</h3>
+          <div className="movie_date_rate">
+            <p>10-20-2020</p>
+            <p>
+              8.0 <img src={Star} alt="rating icon" className="card_emoji" />
+            </p>
+          </div>
+          <p className="movie_description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+            pariatur magnam porro enim maiores libero.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

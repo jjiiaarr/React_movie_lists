@@ -2,7 +2,7 @@ import React from "react";
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import MovieList from "./components/Navbar/MovieList/MovieList";
+import MovieList from "./components/MovieList/MovieList";
 
 const App = () => {
   return (

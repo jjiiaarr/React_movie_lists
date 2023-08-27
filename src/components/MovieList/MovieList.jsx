@@ -25,7 +25,7 @@ const MovieList = () => {
       const sortedMovies = _.orderBy(filterMovies, [sort.by], [sort.order]);
       setFilterMovies(sortedMovies);
     }
-  });
+  }, [sort]);
 
   const fetchMovies = async () => {
     const response = await fetch(

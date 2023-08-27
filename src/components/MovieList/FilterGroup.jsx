@@ -18,7 +18,6 @@ const FilterGroup = ({ minRating, onRatingClick, ratings }) => {
       ))}
     </ul>
   );
-  console.log(ratings);
 };
 
 export default FilterGroup;
